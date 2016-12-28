@@ -18,6 +18,7 @@ func AcceptJson(c echo.Context) error {
 	if err := c.Bind(u); err != nil {
 		return nil
 	}
+	u.Name = u.Name + ",Good"
 	logHelper.Debug.Printf("%+v", u)
 	return c.JSON(http.StatusOK, u)
 }
